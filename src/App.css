@@ -1,0 +1,239 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #16213e;
+  border-bottom: 1px solid #2a2a4a;
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #7c83ff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+
+.btn-present {
+  background: #7c83ff;
+  color: #fff;
+}
+
+.btn-export {
+  background: #2a2a4a;
+  color: #ccc;
+}
+
+.split-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Editor panel */
+.editor-panel {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2a2a4a;
+}
+
+.editor-panel label {
+  padding: 8px 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  background: #16213e;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.editor-panel textarea {
+  flex: 1;
+  resize: none;
+  background: #0f0f23;
+  color: #e0e0e0;
+  border: none;
+  padding: 16px;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  outline: none;
+  tab-size: 2;
+}
+
+/* Preview panel */
+.preview-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+.slide-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px;
+  background: #e8e8e8;
+  border-bottom: 1px solid #ddd;
+}
+
+.slide-nav button {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.slide-nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.slide-counter {
+  font-size: 13px;
+  color: #555;
+  min-width: 100px;
+  text-align: center;
+}
+
+.slide-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.slide {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 48px 56px;
+  width: 100%;
+  max-width: 800px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.slide h1 { font-size: 36px; margin-bottom: 16px; color: #111; }
+.slide h2 { font-size: 28px; margin-bottom: 12px; color: #222; }
+.slide h3 { font-size: 22px; margin-bottom: 10px; color: #333; }
+.slide h4 { font-size: 18px; margin-bottom: 8px; color: #444; }
+.slide p { margin-bottom: 12px; }
+.slide ul, .slide ol { margin-bottom: 12px; padding-left: 24px; }
+.slide li { margin-bottom: 4px; }
+.slide code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.9em;
+}
+.slide pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.slide pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+.slide blockquote {
+  border-left: 4px solid #7c83ff;
+  padding: 8px 16px;
+  margin-bottom: 12px;
+  background: #f8f8ff;
+  color: #555;
+}
+.slide img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+.slide a { color: #7c83ff; }
+
+/* Fullscreen present mode */
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-overlay .slide {
+  max-width: 1000px;
+  min-height: 500px;
+  padding: 64px 80px;
+  font-size: 20px;
+}
+.fullscreen-overlay .slide h1 { font-size: 48px; }
+.fullscreen-overlay .slide h2 { font-size: 36px; }
+
+.fullscreen-nav {
+  position: fixed;
+  bottom: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.fullscreen-nav button {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fullscreen-nav .slide-counter {
+  color: rgba(255,255,255,0.6);
+}
+
+.fullscreen-exit {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
