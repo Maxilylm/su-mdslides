@@ -6,3 +6,7 @@ dist/
 .env*
 *.log
 .DS_Store
+.next/
+.env
+.env.local
+.claude/
